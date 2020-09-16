@@ -40,7 +40,7 @@ outputs:
         - if exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh (exit 0) else (exit 1)  # [win]
 
 about:
-  home: https://bitbucket.org/ignitionrobotics/ign-plugin
+  home: https://github.com/ignitionrobotics/ign-plugin
   license: Apache-2.0
   license_file: COPYING
   summary: |
