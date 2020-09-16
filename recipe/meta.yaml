@@ -8,11 +8,11 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://bitbucket.org/ignitionrobotics/ign-plugin/get/ignition-plugin_{{ version }}.tar.gz
-    sha256: 3b494fe7c9ec0e26c0cc322996b75906fdf624a62199509059ac21879f4544c5
+  - url: https://github.com/ignitionrobotics/ign-plugin/archive/ignition-plugin_{{ version }}.tar.gz
+    sha256: ce089cd6924c460d16591f4d3983b282f2f05ed8b5588f7ede9a91dbd43bd5d7
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14 or unix]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
