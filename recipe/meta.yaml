@@ -28,8 +28,6 @@ requirements:
   host:
     - libignition-cmake2
     - dlfcn-win32  # [win]
-  run:
-    - dlfcn-win32  # [win]
 
 
 test:
