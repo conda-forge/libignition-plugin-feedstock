@@ -13,7 +13,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [win and vc<14 or unix]
+  skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
