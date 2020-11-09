@@ -1,16 +1,14 @@
-About libignition-plugin
-========================
+About libignition-plugin1
+=========================
 
-Home: https://bitbucket.org/ignitionrobotics/ign-plugin
+Home: https://github.com/ignitionrobotics/ign-plugin
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libignition-plugin-feedstock/blob/master/LICENSE.txt)
 
 Summary: Ignition Plugin is a component in the ignition framework, a set of libraries designed
 to rapidly develop robot applications.
-
-
 
 
 Current build status
@@ -31,6 +29,20 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9207&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libignition-plugin-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9207&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libignition-plugin-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9207&branchName=master">
@@ -52,10 +64,10 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libignition--plugin1-green.svg)](https://anaconda.org/conda-forge/libignition-plugin1) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libignition-plugin1.svg)](https://anaconda.org/conda-forge/libignition-plugin1) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libignition-plugin1.svg)](https://anaconda.org/conda-forge/libignition-plugin1) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libignition-plugin1.svg)](https://anaconda.org/conda-forge/libignition-plugin1) |
 
-Installing libignition-plugin
-=============================
+Installing libignition-plugin1
+==============================
 
-Installing `libignition-plugin` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libignition-plugin1` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -112,17 +124,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libignition-plugin-feedstock
-=====================================
+Updating libignition-plugin1-feedstock
+======================================
 
-If you would like to improve the libignition-plugin recipe or build a new
+If you would like to improve the libignition-plugin1 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libignition-plugin-feedstock are
+Note that all branches in the conda-forge/libignition-plugin1-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.

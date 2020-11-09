@@ -4,7 +4,7 @@
 {% set name = base_name + major_version %}
 
 package:
-  name: {{ base_name }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -12,32 +12,28 @@ source:
     sha256: ce089cd6924c460d16591f4d3983b282f2f05ed8b5588f7ede9a91dbd43bd5d7
 
 build:
-  number: 2
-  skip: true  # [win and vc<14 or unix]
+  number: 3
+  skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
-outputs:
-  - name: {{ name }}
-    version: {{ version }}
-    script: bldpkg.bat
-    requirements:
-      build:
-        - {{ compiler('cxx') }}  # [not win]
-        - {{ compiler('c') }}    # [not win]
-        - vs2017_win-64          # [win64]
-        - cmake
-        - ninja
-        - pkg-config
-      host:
-        - libignition-cmake2
-        - dlfcn-win32  # [win]
-      run:
-        - dlfcn-win32  # [win]
-    test:
-      commands:
-        - test -f ${PREFIX}/include/ignition/plugin{{ major_version }}/ignition/plugin.hh  # [not win]
-        - if exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh (exit 0) else (exit 1)  # [win]
+requirements:
+  build:
+    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }}    # [not win]
+    - vs2017_win-64          # [win64]
+    - cmake
+    - ninja
+    - pkg-config
+  host:
+    - libignition-cmake2
+    - dlfcn-win32  # [win]
+
+
+test:
+  commands:
+    - test -f ${PREFIX}/include/ignition/plugin{{ major_version }}/ignition/plugin.hh  # [not win]
+    - if exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh (exit 0) else (exit 1)  # [win]
 
 about:
   home: https://github.com/ignitionrobotics/ign-plugin
