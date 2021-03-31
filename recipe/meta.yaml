@@ -12,16 +12,14 @@ source:
     sha256: ce089cd6924c460d16591f4d3983b282f2f05ed8b5588f7ede9a91dbd43bd5d7
 
 build:
-  number: 3
-  skip: true  # [win and vc<14]
+  number: 4
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [not win]
-    - {{ compiler('c') }}    # [not win]
-    - vs2017_win-64          # [win64]
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
     - cmake
     - ninja
     - pkg-config
