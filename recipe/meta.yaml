@@ -34,7 +34,8 @@ test:
     - test -f ${PREFIX}/include/ignition/plugin{{ major_version }}/ignition/plugin.hh  # [not win]
     - test -f ${PREFIX}/lib/ruby/ignition/cmdplugin{{ major_version }}.rb  # [not win]
     - if not exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\lib\\ruby\\ignition\\cmdplugin{{ major_version }}.rb exit 1  # [win]
+    # Disabled due to https://github.com/conda-forge/libignition-plugin-feedstock/issues/13
+    # - if not exist %PREFIX%\\Library\\lib\\ruby\\ignition\\cmdplugin{{ major_version }}.rb exit 1  # [win]
 
 about:
   home: https://github.com/ignitionrobotics/ign-plugin
