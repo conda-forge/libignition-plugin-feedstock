@@ -12,7 +12,7 @@ source:
     sha256: 476b8a50233c05fec5ab3eb85703a19ff3afcd18c5d55e8de0046dca4940fd42
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -25,13 +25,17 @@ requirements:
     - pkg-config
   host:
     - libignition-cmake2
+    - libignition-tools1
     - dlfcn-win32  # [win]
 
 
 test:
   commands:
     - test -f ${PREFIX}/include/ignition/plugin{{ major_version }}/ignition/plugin.hh  # [not win]
-    - if exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh (exit 0) else (exit 1)  # [win]
+    - test -f ${PREFIX}/lib/ruby/ignition/cmdplugin{{ major_version }}.rb  # [not win]
+    - if not exist %PREFIX%\\Library\\include\\ignition\plugin{{ major_version }}\ignition\plugin.hh exit 1  # [win]
+    # Disabled due to https://github.com/conda-forge/libignition-plugin-feedstock/issues/13
+    # - if not exist %PREFIX%\\Library\\lib\\ruby\\ignition\\cmdplugin{{ major_version }}.rb exit 1  # [win]
 
 about:
   home: https://github.com/ignitionrobotics/ign-plugin
