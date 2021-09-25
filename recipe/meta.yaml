@@ -1,5 +1,5 @@
 {% set base_name = "libignition-plugin" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,10 +9,10 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-plugin/archive/ignition-plugin_{{ version }}.tar.gz
-    sha256: 476b8a50233c05fec5ab3eb85703a19ff3afcd18c5d55e8de0046dca4940fd42
+    sha256: d7a391cb4c6bd5023f2fa4cb1f4b1e628286bc7e933e72604b27ee301f70ccf6
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
