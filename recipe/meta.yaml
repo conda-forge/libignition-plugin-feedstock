@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-plugin/archive/ignition-plugin_{{ version }}.tar.gz
-    sha256: 504c6ef66d48342d92ec7b227a134485ae79946df16094843f33d80f9af34e08
+    sha256: 582746af1ea61a7ba438d68c3a2e58b6962164ea0bd580c120fc799e9679365e
 
 build:
   number: 0
