@@ -1,5 +1,5 @@
 {% set base_name = "libignition-plugin" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-plugin/archive/ignition-plugin_{{ version }}.tar.gz
-    sha256: 504c6ef66d48342d92ec7b227a134485ae79946df16094843f33d80f9af34e08
+    sha256: 582746af1ea61a7ba438d68c3a2e58b6962164ea0bd580c120fc799e9679365e
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - cmake
     - ninja
     - pkg-config
@@ -27,8 +28,6 @@ requirements:
     - libignition-cmake2
     - libignition-tools1
     - dlfcn-win32  # [win]
-  run_constrained:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
